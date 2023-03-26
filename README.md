@@ -17,41 +17,6 @@ As mentioned before I decided to use Flask as web framework, and to get me up to
 
 ### Running the project  
 
-#### Locally
-
-Create virtual environment
-```
-python3 -m venv game-env
-```
-
-Activate virtual environment
-```
-. game-env/bin/activate
-```
-
-Install requirements
-```
-pip install --upgrade pip
-pip install -r requirements.txt
-```
-
-Initialize database:
-```
-flask --app game init-db
-```
-
-Run app
-```
-flask --app game run --debug
-```
-
-Deactivate virtual environment
-```
-deactivate
-```
-
-#### With Docker
-
 Build the project
 ```
 docker build -t rock-paper-scissor .
@@ -59,23 +24,12 @@ docker build -t rock-paper-scissor .
 
 Build the project
 ```
-docker run --publish 5000:5000 --volume $(pwd):/app rock-paper-scissor flask --app game init-db
+docker run --volume $(pwd):/app rock-paper-scissor flask --app game init-db
 docker run --publish 5000:5000 --volume $(pwd):/app rock-paper-scissor 
 ```
 
 ### Running the tests
 
-#### Locally
-```
-coverage run -m pytest
-```
-
-Coverage report
-```
-coverage report
-```
-
-#### With Docker
 ```
 docker run --volume $(pwd):/app rock-paper-scissor coverage run -m pytest
 ```
@@ -87,15 +41,8 @@ docker run --volume $(pwd):/app rock-paper-scissor coverage report
 
 ### Running the linter
 
-#### Locally
 ```
-black .
-```
-
-#### With Docker
-
-```
-docker run --volume $(pwd):/app rock-paper-scissor black . # --exclude '/game-env/'
+docker run --volume $(pwd):/app rock-paper-scissor black .
 ```
 
 
