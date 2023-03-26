@@ -56,3 +56,20 @@ I decided to make something simple based on time limitations, if I were to do so
 
 ### Screenshots
 
+#### First screen
+<img width="569" alt="image" src="https://user-images.githubusercontent.com/4131432/227778075-e1ff9d88-2cd5-40cb-a50b-4a6c260034c5.png">
+
+#### Name screen
+<img width="552" alt="image" src="https://user-images.githubusercontent.com/4131432/227778160-2b97ca16-5f0e-41a0-864d-3062b6c85a55.png">
+
+#### Make your move screen
+<img width="564" alt="image" src="https://user-images.githubusercontent.com/4131432/227778187-ae84fb2c-978f-4bf9-9311-d03eab0e09c1.png">
+
+#### Result screen
+<img width="570" alt="image" src="https://user-images.githubusercontent.com/4131432/227778223-33057d53-bf14-499e-9ecd-f4ec97ef266e.png">
+
+#### 404 screen
+<img width="566" alt="image" src="https://user-images.githubusercontent.com/4131432/227778235-3fd745f4-2038-4d5d-96b0-9ac493d08738.png">
+
+#### Coverage
+<img width="450" alt="image" src="https://user-images.githubusercontent.com/4131432/227778290-0bae4596-1038-41ff-af23-40aab9d942cb.png">
