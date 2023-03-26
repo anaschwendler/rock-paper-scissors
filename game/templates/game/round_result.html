@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1 class="text-center p-100">Results!</h1>
+{% endblock %}
+
+{% block content %}
+  <h2 class="text-center">{{result_hash.text}} - {{ result_hash.winner }} win!</h2>
+  <div class="container text-center">
+    <h3 class="text-center">Scores!</h2>
+    <div class="row align-items-center">
+      <div class='col'>
+        <div>{{ result_hash.player_one_name }}: {{ result_hash.player_one_score }}</div>
+      </div>
+      <div class='col'>
+        <div>{{ result_hash.player_two_name }}: {{ result_hash.player_two_score }}</div>
+      </div>
+    </div>
+    <div class="row align-items-center p-40">    
+      <div class='col'>
+        <a class="btn btn-success" href="{{ url_for('round') }}" role="button">New round</a>
+      </div>
+      <div class='col'>
+        <a class="btn btn-success" href="{{ url_for('finish_session') }}" role="button">End session</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

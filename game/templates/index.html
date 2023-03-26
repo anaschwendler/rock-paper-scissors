@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1 class="text-center p-100">Rock, paper, scissor game!</h1>
+{% endblock %}
+
+{% block content %}
+  <div class="container text-center">
+    <div class="row align-items-center">
+      <form action="/new_round" method="post">
+        <div class='col'>
+        </div>
+        <div class='col'>
+          <button type="submit" class="btn btn-success" name="game-type" value="versus">Play player vs player</button>
+          <button type="submit" class="btn btn-success" name="game-type" value="computer">Play player vs computer</button>
+          {% if last_session is not none %}
+            {% if not last_session['session_completed'] %}
+              <a class="btn btn-success" href="{{ url_for('round') }}" role="button">Continue previous session</a>
+            {% endif %}
+          {% endif %}
+        </div>
+        <div class='col'>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

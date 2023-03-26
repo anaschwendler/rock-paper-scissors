@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1 class="text-center p-100">Make your move!</h1>
+{% endblock %}
+
+{% block content %}
+  <div class="container text-center">
+    <form action="/round_result" method="post">
+      <div class="row align-items-center p-40">
+        <div class='col'>
+          <div class="dropdown">
+            <label for="player-one-move" class="d-block p-2">Player one move:</label>
+            <select class="form-select" name="player-one-move" aria-label="Game type select" required>
+              <option value="" selected>Choose your move</option>
+              {% for game_option in game_options %}
+                <option value="{{ game_options[game_option] }}">{{ game_option }}</a></li>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+        <div class='col'>
+          {% if random_move == '' %}
+            <label for="player-two-move" class="d-block p-2">Player two move:</label>
+            <select class="form-select" name="player-two-move" aria-label="Game type select" required>
+              <option value="" selected>Choose your move</option>
+              {% for game_option in game_options %}
+                <option value="{{ game_options[game_option] }}">{{ game_option }}</a></li>
+              {% endfor %}
+            </select>
+          {% else %}
+            <label for="player-two">Playing against computer</label>
+            <input name="player-two-move" value="{{random_move}}" type="hidden">
+          {% endif %}          
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success">Results!</button>
+    </form>
+  </div>
+{% endblock %}
+

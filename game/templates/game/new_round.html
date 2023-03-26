@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <div class="p-100">
+    <h1 class="text-center ">New game!</h1>
+    <h2 class="text-center">{{ game_type.capitalize() }} mode</h2>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="container text-center">
+    <form action="/round" method="post">
+      <div class="row align-items-center p-40">
+        <div class='col'>
+          <label for="player-one" class="d-block p-2">Enter player one name:</label>
+          <input min="1" max="20" name="player-one" id="player-one" value="{{ request.form['player-one'] }}" required>
+        </div>
+        <div class='col'>
+          {% if game_type == 'computer' %}
+            <label for="player-two" class="d-block p-2">Playing against computer</label>
+            <input min="1" max="20" name="player-two" id="player-two" value="Computer" type="hidden" required>
+          {% else %}
+            <label for="player-two" class="d-block p-2">Enter player two name:</label>
+            <input min="1" max="20" name="player-two" id="player-two" value="{{ request.form['player-two'] }}" required>
+          {% endif %}
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success">Let's go!</button>
+    </form>
+  </div>
+{% endblock %}
